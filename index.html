@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Malla Interactiva</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      padding: 20px;
+    }
+    .cell {
+      background-color: #eee;
+      border: 1px solid #ccc;
+      padding: 30px;
+      text-align: center;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .cell:hover {
+      background-color: #ddd;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Malla Interactiva</h1>
+<div class="grid">
+  <div class="cell" onclick="alert('Hiciste clic en el elemento 1')">Elemento 1</div>
+  <div class="cell" onclick="alert('Elemento 2')">Elemento 2</div>
+  <div class="cell" onclick="alert('Elemento 3')">Elemento 3</div>
+  <div class="cell" onclick="alert('Elemento 4')">Elemento 4</div>
+</div>
+
+</body>
+</html>
