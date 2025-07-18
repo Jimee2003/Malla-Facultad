@@ -1,82 +1,126 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Malla Facultativa</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #fdfcfb;
-      margin: 30px;
-    }
-    h2 {
-      margin-bottom: 5px;
-    }
-    .year {
-      border-left: 8px solid #a3d2ca;
-      padding: 15px;
-      margin-bottom: 30px;
-      background-color: #eafaf1;
-    }
-    .semester {
-      margin-top: 10px;
-    }
-    .subject {
-      background-color: #f6f1f1;
-      border-left: 5px solid #ffcad4;
-      padding: 8px;
-      margin: 5px 0;
-      cursor: pointer;
-      transition: background-color 0.2s;
-    }
-    .subject.done {
-      background-color: #cdeac0;
-      text-decoration: line-through;
-      color: #555;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malla Interactiva - Licenciatura en Laboratorio Clínico</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #3d5a80;
+        }
+        .year {
+            background-color: #ffffff;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 800px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .semester {
+            margin: 10px 0;
+            padding: 10px;
+            border-left: 5px solid #3d5a80;
+            background-color: #e0e7ef;
+            border-radius: 5px;
+        }
+        .subject {
+            background-color: #fefefe;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            transition: background-color 0.3s, text-decoration 0.3s;
+        }
+        .subject.done {
+            background-color: #c1e1c1;
+            text-decoration: line-through;
+            color: #2f5d34;
+        }
+    </style>
 </head>
 <body>
 
-  <h1>Malla Facultativa</h1>
+<h1>Malla Interactiva - Laboratorio Clínico</h1>
 
-  <div class="year">
-    <h2>1er Año</h2>
-
+<!-- Año 1 -->
+<div class="year">
+    <h2>Primer Año</h2>
     <div class="semester">
-      <h3>Primer Semestre</h3>
-      <div class="subject">ESFUNO - Biología Celular y Tisular</div>
-      <div class="subject">ESFUNO - Anatomía</div>
-      <div class="subject">Introducción al Laboratorio Clínico</div>
+        <div class="subject" onclick="toggleDone(this)">ES.FU.NO</div>
+        <div class="subject" onclick="toggleDone(this)">Anatomía</div>
+        <div class="subject" onclick="toggleDone(this)">Biología Celular y Tisular</div>
+        <div class="subject" onclick="toggleDone(this)">Neurobiología</div>
+        <div class="subject" onclick="toggleDone(this)">Cardiovascular y Respiratorio</div>
+        <div class="subject" onclick="toggleDone(this)">Digestivo, Renal y Endócrino</div>
+        <div class="subject" onclick="toggleDone(this)">Reproducción y Desarrollo</div>
+        <div class="subject" onclick="toggleDone(this)">Introducción al Laboratorio Clínico</div>
     </div>
-
     <div class="semester">
-      <h3>Segundo Semestre</h3>
-      <div class="subject">ESFUNO - Neurobiología</div>
-      <div class="subject">ESFUNO - Cardiología</div>
-      <div class="subject">ESFUNO - Digestivo, Renal y Endócrino</div>
-      <div class="subject">ESFUNO - Reproductor y Desarrollo</div>
-      <div class="subject">Prácticos de Laboratorio Clínico</div>
-      <div class="subject">Administración Hospitalaria</div>
-      <div class="subject">Deontología y Legislación Laboral</div>
-      <div class="subject">Enfermería I</div>
-      <div class="subject">Psicología I</div>
+        <div class="subject" onclick="toggleDone(this)">Psicología I</div>
+        <div class="subject" onclick="toggleDone(this)">Metodología Científica</div>
+        <div class="subject" onclick="toggleDone(this)">Enfermería</div>
+        <div class="subject" onclick="toggleDone(this)">Salud Pública</div>
+        <div class="subject" onclick="toggleDone(this)">Deontología y Legislación Laboral</div>
+        <div class="subject" onclick="toggleDone(this)">Administración Hospitalaria</div>
     </div>
+</div>
 
+<!-- Año 2 -->
+<div class="year">
+    <h2>Segundo Año</h2>
     <div class="semester">
-      <h3>Material Anual</h3>
-      <div class="subject">Metodología Científica</div>
+        <div class="subject" onclick="toggleDone(this)">Bioquímica Clínica (Teórico)</div>
+        <div class="subject" onclick="toggleDone(this)">Práctico Medio Interno y Funcionalidad Renal</div>
+        <div class="subject" onclick="toggleDone(this)">Práctico Funcional Hepático y Enzimología</div>
     </div>
-  </div>
+    <div class="semester">
+        <div class="subject" onclick="toggleDone(this)">Práctico Proteínas, Glúcidos y Lípidos</div>
+        <div class="subject" onclick="toggleDone(this)">Práctico Extracción de Sangre</div>
+        <div class="subject" onclick="toggleDone(this)">Hematología (Teórico)</div>
+        <div class="subject" onclick="toggleDone(this)">Práctico de Hematología</div>
+    </div>
+</div>
 
-  <script>
-    // Permite marcar materias como hechas
-    document.querySelectorAll('.subject').forEach(function(subject) {
-      subject.addEventListener('click', function() {
-        subject.classList.toggle('done');
-      });
-    });
-  </script>
+<!-- Año 3 -->
+<div class="year">
+    <h2>Tercer Año</h2>
+    <div class="semester">
+        <div class="subject" onclick="toggleDone(this)">Microbiología A: Bacteriología y Virología</div>
+        <div class="subject" onclick="toggleDone(this)">Práctico de Microbiología A</div>
+        <div class="subject" onclick="toggleDone(this)">Microbiología B: Parasitología</div>
+        <div class="subject" onclick="toggleDone(this)">Práctico de Microbiología B</div>
+    </div>
+    <div class="semester">
+        <div class="subject" onclick="toggleDone(this)">Inmunología</div>
+    </div>
+</div>
+
+<!-- Año 4 -->
+<div class="year">
+    <h2>Cuarto Año</h2>
+    <div class="semester">
+        <div class="subject" onclick="toggleDone(this)">Práctico de Inmunología</div>
+    </div>
+    <div class="semester">
+        <div class="subject" onclick="toggleDone(this)">Internado</div>
+        <div class="subject" onclick="toggleDone(this)">Monografía</div>
+    </div>
+</div>
+
+<script>
+    function toggleDone(element) {
+        element.classList.toggle("done");
+    }
+</script>
 
 </body>
 </html>
