@@ -1,82 +1,190 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Malla Interactiva - Facultad</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f9f9f9;
+      background: #fdfdfd;
+      margin: 0;
       padding: 2rem;
     }
-    h1, h2, h3 {
+
+    h1 {
+      text-align: center;
       color: #333;
     }
+
     .year {
-      margin-bottom: 2rem;
-      padding: 1rem;
-      border-left: 5px solid #007acc;
-      background: #fff;
+      border-left: 10px solid;
+      margin: 2rem 0;
+      padding-left: 1rem;
+      background: #f9f9f9;
+      border-radius: 8px;
     }
+
+    .year:nth-child(1) { border-color: #f9c5d1; background: #fff0f5; }
+    .year:nth-child(2) { border-color: #bce0f6; background: #e9f7fe; }
+    .year:nth-child(3) { border-color: #c8facc; background: #f0fff0; }
+    .year:nth-child(4) { border-color: #ffe6ac; background: #fffaf0; }
+
+    h2 {
+      margin-top: 1rem;
+      color: #555;
+    }
+
     .semester {
       margin-top: 1rem;
     }
+
     .subjects {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
       margin-top: 0.5rem;
     }
+
     .subject {
-      padding: 10px 15px;
+      padding: 10px 14px;
       border-radius: 6px;
+      background: #e0e0e0;
+      color: #333;
       cursor: pointer;
-      background: #e0e0e0;
-      transition: 0.3s;
+      transition: all 0.3s;
+      position: relative;
     }
-    .subject.approved {
-      background: #a0e8a0;
+
+    .subject.done {
+      background: #b8e9b8;
+      color: #2d662d;
     }
-    .subject.inprogress {
-      background: #ffe28a;
+
+    .subject.done::after {
+      content: "✔️";
+      position: absolute;
+      right: 8px;
+      top: 5px;
+      font-size: 14px;
     }
-    .subject.pending {
-      background: #e0e0e0;
+
+    #reset {
+      display: block;
+      margin: 40px auto;
+      padding: 10px 20px;
+      background-color: #ffcccc;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
     }
-    .annual {
-      font-style: italic;
-      margin-top: 10px;
+
+    #reset:hover {
+      background-color: #ffb3b3;
     }
   </style>
 </head>
 <body>
-
-<h1>Malla Interactiva - Primer Año</h1>
-
-<div class="year" id="year-1">
+  <h1>Malla Interactiva - Laboratorio Clínico</h1>
+  <!-- Primer Año -->
+<div class="year">
   <h2>Primer Año</h2>
 
   <div class="semester">
     <h3>Primer Semestre</h3>
-    <div class="subjects" data-semester="1s">
-      <div class="subject" data-name="Esfuno">Esfuno</div>
+    <div class="subjects">
       <div class="subject" data-name="BCyT">BCyT</div>
       <div class="subject" data-name="Anatomía">Anatomía</div>
-      <div class="subject" data-name="Introducción a Laboratorio Clínico">Introducción a Laboratorio Clínico</div>
+      <div class="subject" data-name="Introducción al Laboratorio">Introducción al Laboratorio</div>
     </div>
   </div>
 
   <div class="semester">
     <h3>Segundo Semestre</h3>
-    <div class="subjects" data-semester="2s">
-      <div class="subject" data-name="Esfuno">Esfuno</div>
+    <div class="subjects">
       <div class="subject" data-name="Neurobiología">Neurobiología</div>
       <div class="subject" data-name="Cardiología">Cardiología</div>
       <div class="subject" data-name="DRE">DRE</div>
       <div class="subject" data-name="Reproductor y Desarrollo">Reproductor y Desarrollo</div>
-      <div class="subject" data-name="Prácticos de Laboratorio">Prácticos de
-    }
-</script>
+      <div class="subject" data-name="Administración Hospitalaria">Administración Hospitalaria</div>
+      <div class="subject" data-name="Deontología y Legislación Laboral">Deontología y Legislación Laboral</div>
+      <div class="subject" data-name="Salud Pública">Salud Pública</div>
+      <div class="subject" data-name="Enfermería 1">Enfermería 1</div>
+      <div class="subject" data-name="Psicología 1">Psicología 1</div>
+      <div class="subject" data-name="Prácticos de Laboratorio">Prácticos de Laboratorio</div>
+    </div>
+  </div>
 
-</body>
-</html>
+  <div class="semester">
+    <h3>Materia Anual</h3>
+    <div class="subjects">
+      <div class="subject" data-name="Metodología Científica">Metodología Científica</div>
+    </div>
+  </div>
+</div>
+
+<!-- Segundo Año -->
+<div class="year">
+  <h2>Segundo Año</h2>
+
+  <div class="semester">
+    <h3>Primer Semestre</h3>
+    <div class="subjects">
+      <div class="subject" data-name="Bioquímica Clínica (Teórico) Seminarios">Bioquímica Clínica (Teórico) Seminarios</div>
+      <div class="subject" data-name="Práctico Medio Interno y Funcionalidad Renal">Práctico Medio Interno y Funcionalidad Renal</div>
+      <div class="subject" data-name="Práctico Funcional Hepático y Enzimología">Práctico Funcional Hepático y Enzimología</div>
+    </div>
+  </div>
+
+  <div class="semester">
+    <h3>Segundo Semestre</h3>
+    <div class="subjects">
+      <div class="subject" data-name="Práctico Proteínas, Glúcidos y Lípidos">Práctico Proteínas, Glúcidos y Lípidos</div>
+      <div class="subject" data-name="Práctico Extracción de Sangre">Práctico Extracción de Sangre</div>
+      <div class="subject" data-name="Hematología (Teórico) Seminarios">Hematología (Teórico) Seminarios</div>
+      <div class="subject" data-name="Práctico de Hematología">Práctico de Hematología</div>
+    </div>
+  </div>
+</div>
+
+<!-- Tercer Año -->
+<div class="year">
+  <h2>Tercer Año</h2>
+
+  <div class="semester">
+    <h3>Primer Semestre</h3>
+    <div class="subjects">
+      <div class="subject" data-name="Microbiología A) Bacteriología y Virología. Seminarios">Microbiología A) Bacteriología y Virología. Seminarios</div>
+      <div class="subject" data-name="Práctico de Microbiología A) Bacteriología y Virología.">Práctico de Microbiología A) Bacteriología y Virología.</div>
+    </div>
+  </div>
+
+  <div class="semester">
+    <h3>Segundo Semestre</h3>
+    <div class="subjects">
+      <div class="subject" data-name="Microbiología B) Parasitología. Seminarios">Microbiología B) Parasitología. Seminarios</div>
+      <div class="subject" data-name="Práctico de Microbiología B) Parasitología.">Práctico de Microbiología B) Parasitología.</div>
+      <div class="subject" data-name="Inmunología Seminarios">Inmunología Seminarios</div>
+    </div>
+  </div>
+</div>
+
+<!-- Cuarto Año -->
+<div class="year">
+  <h2>Cuarto Año</h2>
+
+  <div class="semester">
+    <h3>Primer Semestre</h3>
+    <div class="subjects">
+      <div class="subject" data-name="Práctico de Inmunología">Práctico de Inmunología</div>
+    </div>
+  </div>
+
+  <div class="semester">
+    <h3>Segundo Semestre</h3>
+    <div class="subjects">
+      <div class="subject" data-name="Internado">Internado</div>
+      <div class="subject" data-name="Monografía">Monografía</div>
+    </div>
+  </div>
+</div>
