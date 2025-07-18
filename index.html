@@ -188,3 +188,44 @@
     </div>
   </div>
 </div>
+  <script>
+  // Carga el progreso guardado desde localStorage o un objeto vacío
+  const savedProgress = JSON.parse(localStorage.getItem('mallaProgreso')) || {};
+
+  // Selecciona todas las materias
+  const subjects = document.querySelectorAll('.subject');
+
+  subjects.forEach(subject => {
+    const name = subject.dataset.name;
+
+    // Si la materia estaba marcada como hecha, la marcamos
+    if (savedProgress[name]) {
+      subject.classList.add('done');
+    }
+
+    // Evento click para alternar estado
+    subject.addEventListener('click', () => {
+      subject.classList.toggle('done');
+
+      // Actualizamos el progreso en localStorage
+      savedProgress[name] = subject.classList.contains('done');
+      localStorage.setItem('mallaProgreso', JSON.stringify(savedProgress));
+    });
+  });
+
+  // Botón reiniciar
+  const resetBtn = document.createElement('button');
+  resetBtn.id = 'reset';
+  resetBtn.textContent = 'Reiniciar Malla';
+
+  resetBtn.addEventListener('click', () => {
+    if (confirm('¿Querés borrar todo el progreso y empezar de nuevo?')) {
+      localStorage.removeItem('mallaProgreso');
+      subjects.forEach(s => s.classList.remove('done'));
+    }
+  });
+
+  document.body.appendChild(resetBtn);
+</script>
+</body>
+</html>
