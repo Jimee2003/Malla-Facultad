@@ -2,112 +2,81 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Malla - Primer Año</title>
+  <title>Malla Facultativa</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #fdfdfd;
-      margin: 20px;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fdfcfb;
+      margin: 30px;
     }
-    .año {
-      padding: 20px;
+    h2 {
+      margin-bottom: 5px;
+    }
+    .year {
+      border-left: 8px solid #a3d2ca;
+      padding: 15px;
       margin-bottom: 30px;
-      border-radius: 10px;
-      color: #333;
+      background-color: #eafaf1;
     }
-
-    .año-1 { background-color: #FADADD; } /* rosa pastel */
-
-    .titulo-año {
-      font-size: 26px;
-      font-weight: bold;
-      margin-bottom: 15px;
+    .semester {
+      margin-top: 10px;
     }
-
-    .semestres {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .semestre {
-      flex: 1;
-      min-width: 250px;
-      background: #ffffff;
-      border-radius: 8px;
-      padding: 15px;
-      box-shadow: 0 0 6px rgba(0,0,0,0.08);
-    }
-
-    .titulo-semestre {
-      font-weight: bold;
-      font-size: 18px;
-      color: #666;
-      margin-bottom: 10px;
-    }
-
-    .materia {
-      background: #f6f6f6;
-      padding: 10px;
-      margin: 6px 0;
-      border-radius: 6px;
-      text-align: center;
+    .subject {
+      background-color: #f6f1f1;
+      border-left: 5px solid #ffcad4;
+      padding: 8px;
+      margin: 5px 0;
       cursor: pointer;
-      transition: background 0.3s;
+      transition: background-color 0.2s;
     }
-
-    .materia:hover {
-      background: #e0e0e0;
-    }
-
-    .anual {
-      margin-top: 20px;
-      background: #ffffff;
-      border-radius: 8px;
-      padding: 15px;
-      box-shadow: 0 0 6px rgba(0,0,0,0.08);
-    }
-
-    .titulo-anual {
-      font-weight: bold;
-      font-size: 18px;
-      color: #666;
-      margin-bottom: 10px;
+    .subject.done {
+      background-color: #cdeac0;
+      text-decoration: line-through;
+      color: #555;
     }
   </style>
 </head>
 <body>
 
-  <div class="año año-1">
-    <div class="titulo-año">1er Año</div>
+  <h1>Malla Facultativa</h1>
 
-    <div class="semestres">
-      <div class="semestre">
-        <div class="titulo-semestre">1er Semestre</div>
-        <div class="materia">Biología Celular y Tejidos (BCyT)</div>
-        <div class="materia">Anatomía</div>
-        <div class="materia">Introducción al Laboratorio Clínico</div>
-      </div>
+  <div class="year">
+    <h2>1er Año</h2>
 
-      <div class="semestre">
-        <div class="titulo-semestre">2do Semestre</div>
-        <div class="materia">Neurobiología</div>
-        <div class="materia">Cardiología</div>
-        <div class="materia">DRE (Digestivo, Respiratorio y Endócrino)</div>
-        <div class="materia">Reproductor y Desarrollo</div>
-        <div class="materia">Prácticos de Laboratorio Clínico</div>
-        <div class="materia">Administración Hospitalaria</div>
-        <div class="materia">Deontología y Legislación Laboral</div>
-        <div class="materia">Enfermería 1</div>
-        <div class="materia">Psicología 1</div>
-      </div>
+    <div class="semester">
+      <h3>Primer Semestre</h3>
+      <div class="subject">ESFUNO - Biología Celular y Tisular</div>
+      <div class="subject">ESFUNO - Anatomía</div>
+      <div class="subject">Introducción al Laboratorio Clínico</div>
     </div>
 
-    <div class="anual">
-      <div class="titulo-anual">Material Anual</div>
-      <div class="materia">Metodología Científica</div>
+    <div class="semester">
+      <h3>Segundo Semestre</h3>
+      <div class="subject">ESFUNO - Neurobiología</div>
+      <div class="subject">ESFUNO - Cardiología</div>
+      <div class="subject">ESFUNO - Digestivo, Renal y Endócrino</div>
+      <div class="subject">ESFUNO - Reproductor y Desarrollo</div>
+      <div class="subject">Prácticos de Laboratorio Clínico</div>
+      <div class="subject">Administración Hospitalaria</div>
+      <div class="subject">Deontología y Legislación Laboral</div>
+      <div class="subject">Enfermería I</div>
+      <div class="subject">Psicología I</div>
+    </div>
+
+    <div class="semester">
+      <h3>Material Anual</h3>
+      <div class="subject">Metodología Científica</div>
     </div>
   </div>
+
+  <script>
+    // Permite marcar materias como hechas
+    document.querySelectorAll('.subject').forEach(function(subject) {
+      subject.addEventListener('click', function() {
+        subject.classList.toggle('done');
+      });
+    });
+  </script>
 
 </body>
 </html>
